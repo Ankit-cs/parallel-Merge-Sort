@@ -1,20 +1,50 @@
-# parallel-Merge-Sort
-Implemnting parallel merge sort with the help of multithreading concept in c++
-This project presents an implementation of the Merge Sort algorithm utilizing parallel processing in C++. By leveraging multithreading, the sorting process is significantly accelerated, especially for large datasets. The implementation demonstrates the use of thread pools and efficient synchronization mechanisms to achieve optimal performance.
 
-Features
-Parallel Processing: Utilizes multiple CPU threads to perform sorting concurrently, reducing execution time.
-Thread Pool: Manages a pool of threads to handle sorting tasks efficiently.
-Performance Benchmarking: Compares execution times between standard Merge Sort and Parallel Merge Sort, highlighting the performance gains achieved through parallelism.
-Implementation Details
-The implementation focuses on enhancing the traditional Merge Sort algorithm by introducing parallelism. The key components include:
+🚀 Parallel Merge Sort in C++
 
-Recursive Division: The dataset is recursively divided into smaller subarrays until a threshold is reached.
-Parallel Sorting: Subarrays are sorted in parallel using multiple threads.
-Merging: Sorted subarrays are merged to produce the final sorted array.
-Thread Pool
-A thread pool is employed to manage the creation and synchronization of threads efficiently. This approach minimizes the overhead associated with frequent thread creation and destruction, leading to better resource utilization and performance.
+This project implements Parallel Merge Sort using the multithreading capabilities of C++. It significantly improves sorting performance on large datasets by distributing tasks across multiple CPU cores.
 
-Performance Comparison
-Benchmark tests were conducted to compare the execution times of the standard Merge Sort and the Parallel Merge Sort implementations. On a MacBook M1 Pro, the standard Merge Sort executed in approximately 25 seconds, while the Parallel Merge Sort completed the same task in about 1 second, demonstrating a significant performance improvement.
+
+
+ ✅ Features
+
+* 🔀 Parallel Processing: Uses multiple threads to sort different parts of the array concurrently.
+* 🧵 Thread Pool: Efficiently manages threads, reducing overhead and improving performance.
+* 📊 Performance Benchmarking: Compares standard Merge Sort with Parallel Merge Sort.
+
+
+ ⚙️ How It Works
+
+ 1. Recursive Division
+The input array is recursively divided into halves until a base threshold (like 1,000 elements) is reached.
+
+ 2. Parallel Sorting
+
+ The smaller subarrays are sorted in parallel using threads from the thread pool.
+
+3. Efficient Merging
+Sorted subarrays are merged back into a single sorted array using the traditional merge step.
+
+
+
+🧵 Thread Pool Usage
+
+ A thread pool is used to manage worker threads instead of creating new threads each time.
+ This avoids the overhead of creating and destroying threads repeatedly.
+ Threads are synchronized efficiently to avoid race conditions.
+
+
+Performance Results
+
+| Version             | Time Taken (WIndows) |
+| ------------------- | --------------------------- |
+| Standard Merge Sort | \~25 seconds                |
+| Parallel Merge Sort | \~1 second                  |
+
+> ✅ Result: 25x speedup with parallel processing.
+
+
+
+ 📦 Summary
+
+This implementation showcases the power of multithreading in C++ to optimize one of the classic sorting algorithms—**Merge Sort**. By integrating parallelism and thread pooling, it delivers impressive performance on modern multi-core processors.
 
