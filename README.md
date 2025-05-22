@@ -42,6 +42,8 @@ Performance Results
 
 > ✅ Result: 25x speedup with parallel processing.
 
+C++ Compiler: Ensure you have a C++ compiler that supports C++11 or later.
+CMake: Used for building the project.
 
 
  📦 Summary
